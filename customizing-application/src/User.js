@@ -56,22 +56,29 @@ const User = () => {
 
   return (
     <div>
-      <h1>{user.email.split("@")[0]}님 환영합니다. 👅👅👅</h1>
-      <button onClick={() => setHide(!hide)}>추천인 코드 보기</button>
+      <h1 className="text-4xl font-bold my-2">
+        {user.email.split("@")[0]}님 환영합니다. 👅👅👅
+      </h1>
+      <button
+        className="border-2 border-gray-600 m-1 p-1"
+        onClick={() => setHide(!hide)}
+      >
+        추천인 코드 {hide ? "보기" : "숨기기"}
+      </button>
       {hide ? null : (
-        <div>
+        <div className="flex place-items-center">
           <label>추천인 코드: {user.uid}</label>
           <Tooltip
             placement="bottom"
             title="추천인 코드를 복사하려면 클릭하세요."
           >
             <svg
+              className="ml-4"
               width="12"
               height="12"
               viewBox="0 0 17 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ marginLeft: "20px" }}
               onClick={copyHandler}
             >
               <circle cx="8.5" cy="8.5" r="8.5" fill="#858585" />
@@ -92,7 +99,12 @@ const User = () => {
       <form onSubmit={submitHandler}>
         <label>
           크기를 골라주세요:
-          <input type="number" value={size} onChange={handleSizeChange} />
+          <input
+            className="border-2 border-gray-300"
+            type="number"
+            value={size}
+            onChange={handleSizeChange}
+          />
         </label>
         <br />
         <label>
@@ -125,7 +137,9 @@ const User = () => {
           />
         </label>
         <CustomizableBox color={colors.color3} size={size} />
-        <button type="submit">SAVE</button>
+        <button className="border-2 border-gray-600 m-1 p-1" type="submit">
+          SAVE
+        </button>
       </form>
     </div>
   );
