@@ -1,0 +1,71 @@
+.layout {
+  background-color: #fff;
+  width: 15%;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.logo {
+  padding: 18%;
+  text-align: center;
+  border: 2px solid #a4a4a4;
+  border-radius: 8px;
+}
+
+.menu {
+  font-weight: 550;
+  margin: 0 6% 0 6%;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.link {
+  color: #a4a4a4;
+  padding: 8px 15px 8px 15px;
+  margin: 0 0 3% 0;
+}
+
+.link:hover {
+  background-color: #f4f7ff;
+  border-radius: 8px;
+}
+
+.activeLink {
+  background-color: #4073f2;
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 15px 8px 15px;
+  margin: 0 0 3% 0;
+}
+
+.line {
+  border-bottom: 1px solid #a4a4a4;
+}
+
+.board {
+  margin: 180% 6% 7% 6%;
+  background-color: #fafafa;
+  padding: 30%;
+  height: 18%;
+  border-radius: 8px;
+}
+
+.logout {
+  background-color: #ffebeb;
+  color: #ff5252;
+  font-weight: 550;
+  margin: 0 6% 0 6%;
+  padding: 8px 15px 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #ff5252;
+  color: #ffebeb;
+}

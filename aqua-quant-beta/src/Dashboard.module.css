@@ -1,0 +1,10 @@
+.mainContainer {
+  margin-left: 15%;
+}
+
+.username {
+  text-align: right;
+  margin: 0 1% 0 0;
+  padding: 0.4% 0 0.4% 0;
+  background-color: #fff;
+}
