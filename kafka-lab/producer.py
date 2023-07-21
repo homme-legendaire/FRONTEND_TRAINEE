@@ -2,7 +2,8 @@ from confluent_kafka import Producer
 import json
 
 # 카프카 서버 설정
-bootstrap_servers = "localhost:9092"
+# bootstrap_servers = "localhost:9092"
+bootstrap_servers = "3.39.192.44:9092"
 topic = "test_topic"
 
 # Producer 설정

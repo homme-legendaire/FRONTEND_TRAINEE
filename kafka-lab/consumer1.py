@@ -2,7 +2,8 @@ from confluent_kafka import Consumer, KafkaException
 import json
 
 # Kafka 서버 및 토픽 설정
-bootstrap_servers = "localhost:9092"
+# bootstrap_servers = "localhost:9092"
+bootstrap_servers = "3.39.192.44:9092"
 topic = "test_topic"
 group_id = "my_consumer_group1"
 
