@@ -15,13 +15,13 @@ def consume_message(consumer):
         if msg is None:
             continue
         if msg.error():
-            if msg.error().code() == KafkaException._PARTITION_EOF:
-                # 모든 파티션의 메시지를 수신한 경우
-                continue
-            else:
-                # 다른 오류가 있는 경우
-                print(f"Consumer error: {msg.error()}")
-                break
+            # if msg.error().code() == KafkaException._PARTITION_EOF:
+            #     # 모든 파티션의 메시지를 수신한 경우
+            #     continue
+            # else:
+            # 다른 오류가 있는 경우
+            print(f"Consumer error: {msg.error()}")
+            break
 
         # 수신한 메시지 처리
         if msg.key() is not None:

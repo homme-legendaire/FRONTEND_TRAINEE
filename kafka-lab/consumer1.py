@@ -2,10 +2,10 @@ from confluent_kafka import Consumer, KafkaException
 import json
 
 # Kafka 서버 및 토픽 설정
-# bootstrap_servers = "localhost:9092"
-bootstrap_servers = "3.39.192.44:9092"
+# bootstrap_servers = "3.39.192.44:9092"
+bootstrap_servers = "localhost:9092"
 topic = "test_topic"
-group_id = "my_consumer_group1"
+group_id = "my_consumer_group2"
 
 
 def consume_message(consumer):
@@ -30,6 +30,7 @@ def consume_message(consumer):
         else:
             key = None
         value = json.loads(msg.value().decode("utf-8"))
+        print_assigned_partitions(consumer)
         print(f"Received message: Key={key}, Value={value}")
 
     # Consumer 종료
@@ -46,6 +47,15 @@ consumer = Consumer(conf)
 
 # 토픽 구독
 consumer.subscribe([topic])
+
+
+# 할당된 파티션 정보 출력
+def print_assigned_partitions(consumer):
+    partitions = consumer.assignment()
+    print("Assigned partitions:", partitions)
+
+
+print_assigned_partitions(consumer)
 
 # 메시지 수신 및 처리
 consume_message(consumer)

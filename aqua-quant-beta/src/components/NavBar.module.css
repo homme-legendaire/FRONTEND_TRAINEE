@@ -1,4 +1,5 @@
 .layout {
+  font-size: 16px;
   background-color: #fff;
   width: 15%;
   padding: 0;
@@ -6,13 +7,13 @@
   position: fixed;
   height: 100%;
   overflow: auto;
+  flex-shrink: 0;
 }
 
 .logo {
   padding: 18%;
   text-align: center;
-  border: 2px solid #a4a4a4;
-  border-radius: 8px;
+  border-bottom: 2px solid #a4a4a4;
 }
 
 .menu {
@@ -31,12 +32,12 @@
 }
 
 .link:hover {
-  background-color: #f4f7ff;
+  background-color: var(--light-blue);
   border-radius: 8px;
 }
 
 .activeLink {
-  background-color: #4073f2;
+  background-color: var(--main);
   border-radius: 8px;
   color: #fff;
   padding: 8px 15px 8px 15px;
@@ -44,7 +45,7 @@
 }
 
 .line {
-  border-bottom: 1px solid #a4a4a4;
+  border-bottom: 1.5px solid #dcdcdc;
 }
 
 .board {
@@ -56,9 +57,8 @@
 }
 
 .logout {
-  background-color: #ffebeb;
-  color: #ff5252;
-  font-weight: 550;
+  color: var(--medium);
+  font-weight: 500;
   margin: 0 6% 0 6%;
   padding: 8px 15px 8px 15px;
   border-radius: 8px;
@@ -66,6 +66,6 @@
 }
 
 .logout:hover {
-  background-color: #ff5252;
-  color: #ffebeb;
+  background-color: #ffebeb;
+  color: #ff5252;
 }

@@ -2,8 +2,8 @@ from confluent_kafka import Producer
 import json
 
 # 카프카 서버 설정
-# bootstrap_servers = "localhost:9092"
-bootstrap_servers = "3.39.192.44:9092"
+# bootstrap_servers = "3.39.192.44:9092"
+bootstrap_servers = "localhost:9092"
 topic = "test_topic"
 
 # Producer 설정
@@ -16,7 +16,12 @@ producer = Producer(conf)
 message = {"test": "6974"}
 
 # JSON 메시지를 카프카에 전송
-producer.produce(topic, key="0xc74", value=json.dumps(message))
+try:
+    producer.produce(topic, key="0xc74", value=json.dumps(message))
+    print(f"Sent message {message}")
+except Exception as e:
+    print(f"Error while sending message: {e}")
+
 
 # 메시지 전송 처리
 producer.flush()

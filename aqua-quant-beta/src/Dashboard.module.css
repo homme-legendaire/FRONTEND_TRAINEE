@@ -1,10 +1,14 @@
 .mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-left: 15%;
+  width: 85%;
 }
 
-.username {
+.username label {
+  margin-right: 2%;
+  color: var(--medium);
   text-align: right;
-  margin: 0 1% 0 0;
-  padding: 0.4% 0 0.4% 0;
-  background-color: #fff;
+  font-size: 12px;
 }

@@ -1,12 +1,25 @@
 .mainContainer {
-  width: 100%;
+  width: 94%;
   background-color: #fff;
-  margin: 1.5% 0 1.5% 0;
+  margin: 1% 0 1% 0;
   padding: 1.5%;
   border-radius: 8px;
 }
 
 .title {
-  color: #4073f2;
-  font-weight: bold;
+  color: var(--main);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.overviewContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.divider {
+  width: 1px;
+  background-color: #dcdcdc;
+  margin-top: 1%;
 }

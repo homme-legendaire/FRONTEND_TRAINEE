@@ -6,12 +6,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: #a4a4a4;
-  background-color: #f9f9f9;
+  background-color: #eeeeee;
+  /* font-size: 16px; */
+  font-size: 14px;
   height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* css variables */
+:root {
+  --main: #4073f2;
+  --medium: #a4a4a4;
+  --regular-light: #e7e7e7;
+  --light-blue: #f4f7ff;
+  --well-done: #767676;
 }
