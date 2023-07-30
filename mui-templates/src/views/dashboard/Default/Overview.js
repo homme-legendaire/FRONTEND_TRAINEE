@@ -35,7 +35,7 @@ const status = [
 
 // ==============================|| DASHBOARD DEFAULT - TOTAL GROWTH BAR CHART ||============================== //
 
-const TotalGrowthBarChart = ({ isLoading }) => {
+const Overview = ({ isLoading }) => {
   const [value, setValue] = useState('today');
   const theme = useTheme();
   const customization = useSelector((state) => state.customization);
@@ -100,6 +100,9 @@ const TotalGrowthBarChart = ({ isLoading }) => {
                 <Grid item>
                   <Grid container direction="column" spacing={1}>
                     <Grid item>
+                      <Typography sx={{ fontSize: '24px', fontWeight: 600, color: theme.palette.primary.dark }}>Overview</Typography>
+                    </Grid>
+                    <Grid item>
                       <Typography variant="subtitle2">Total Growth</Typography>
                     </Grid>
                     <Grid item>
@@ -128,8 +131,8 @@ const TotalGrowthBarChart = ({ isLoading }) => {
   );
 };
 
-TotalGrowthBarChart.propTypes = {
+Overview.propTypes = {
   isLoading: PropTypes.bool
 };
 
-export default TotalGrowthBarChart;
+export default Overview;

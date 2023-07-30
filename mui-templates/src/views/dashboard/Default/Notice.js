@@ -19,7 +19,7 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 
 // ==============================|| DASHBOARD DEFAULT - POPULAR CARD ||============================== //
 
-const PopularCard = ({ isLoading }) => {
+const Notice = ({ isLoading }) => {
   const theme = useTheme();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -43,7 +43,7 @@ const PopularCard = ({ isLoading }) => {
               <Grid item xs={12}>
                 <Grid container alignContent="center" justifyContent="space-between">
                   <Grid item>
-                    <Typography variant="h4">Popular Stocks</Typography>
+                    <Typography sx={{ fontSize: '24px', fontWeight: 600, color: theme.palette.primary.dark }}>Notice</Typography>
                   </Grid>
                   <Grid item>
                     <MoreHorizOutlinedIcon
@@ -302,8 +302,8 @@ const PopularCard = ({ isLoading }) => {
   );
 };
 
-PopularCard.propTypes = {
+Notice.propTypes = {
   isLoading: PropTypes.bool
 };
 
-export default PopularCard;
+export default Notice;

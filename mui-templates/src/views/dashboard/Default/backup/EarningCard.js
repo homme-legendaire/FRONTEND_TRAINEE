@@ -18,45 +18,45 @@ import FileCopyTwoToneIcon from '@mui/icons-material/FileCopyOutlined';
 import PictureAsPdfTwoToneIcon from '@mui/icons-material/PictureAsPdfOutlined';
 import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveOutlined';
 
-const CardWrapper = styled(MainCard)(() => ({
-  // backgroundColor: theme.palette.primary.dark,
-  // color: '#fff',
+const CardWrapper = styled(MainCard)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.dark,
+  color: '#fff',
   overflow: 'hidden',
-  position: 'relative'
-  // '&:after': {
-  //   content: '""',
-  //   position: 'absolute',
-  //   width: 210,
-  //   height: 210,
-  //   background: theme.palette.primary[800],
-  //   borderRadius: '50%',
-  //   top: -85,
-  //   right: -95,
-  //   [theme.breakpoints.down('sm')]: {
-  //     top: -105,
-  //     right: -140
-  //   }
-  // },
-  // '&:before': {
-  //   content: '""',
-  //   position: 'absolute',
-  //   width: 210,
-  //   height: 210,
-  //   background: theme.palette.primary[800],
-  //   borderRadius: '50%',
-  //   top: -125,
-  //   right: -15,
-  //   opacity: 0.5,
-  //   [theme.breakpoints.down('sm')]: {
-  //     top: -155,
-  //     right: -70
-  //   }
-  // }
+  position: 'relative',
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    width: 210,
+    height: 210,
+    background: theme.palette.primary[800],
+    borderRadius: '50%',
+    top: -85,
+    right: -95,
+    [theme.breakpoints.down('sm')]: {
+      top: -105,
+      right: -140
+    }
+  },
+  '&:before': {
+    content: '""',
+    position: 'absolute',
+    width: 210,
+    height: 210,
+    background: theme.palette.primary[800],
+    borderRadius: '50%',
+    top: -125,
+    right: -15,
+    opacity: 0.5,
+    [theme.breakpoints.down('sm')]: {
+      top: -155,
+      right: -70
+    }
+  }
 }));
 
 // ===========================|| DASHBOARD DEFAULT - EARNING CARD ||=========================== //
 
-const SmallEarningCard = ({ isLoading }) => {
+const Positions = ({ isLoading }) => {
   const theme = useTheme();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -85,7 +85,7 @@ const SmallEarningCard = ({ isLoading }) => {
                       sx={{
                         ...theme.typography.commonAvatar,
                         ...theme.typography.largeAvatar,
-                        // backgroundColor: theme.palette.primary[800],
+                        backgroundColor: theme.palette.primary[800],
                         mt: 1
                       }}
                     >
@@ -98,8 +98,8 @@ const SmallEarningCard = ({ isLoading }) => {
                       sx={{
                         ...theme.typography.commonAvatar,
                         ...theme.typography.mediumAvatar,
-                        // backgroundColor: theme.palette.primary.dark,
-                        // color: theme.palette.primary[200],
+                        backgroundColor: theme.palette.primary.dark,
+                        color: theme.palette.primary[200],
                         zIndex: 1
                       }}
                       aria-controls="menu-earning-card"
@@ -149,9 +149,9 @@ const SmallEarningCard = ({ isLoading }) => {
                     <Avatar
                       sx={{
                         cursor: 'pointer',
-                        ...theme.typography.smallAvatar
-                        // backgroundColor: theme.palette.primary[200],
-                        // color: theme.palette.primary.dark
+                        ...theme.typography.smallAvatar,
+                        backgroundColor: theme.palette.primary[200],
+                        color: theme.palette.primary.dark
                       }}
                     >
                       <ArrowUpwardIcon fontSize="inherit" sx={{ transform: 'rotate3d(1, 1, 1, 45deg)' }} />
@@ -163,8 +163,8 @@ const SmallEarningCard = ({ isLoading }) => {
                 <Typography
                   sx={{
                     fontSize: '1rem',
-                    fontWeight: 500
-                    // color: theme.palette.primary[200]
+                    fontWeight: 500,
+                    color: theme.palette.primary[200]
                   }}
                 >
                   Total Earning
@@ -178,8 +178,8 @@ const SmallEarningCard = ({ isLoading }) => {
   );
 };
 
-SmallEarningCard.propTypes = {
+Positions.propTypes = {
   isLoading: PropTypes.bool
 };
 
-export default SmallEarningCard;
+export default Positions;
