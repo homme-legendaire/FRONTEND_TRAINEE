@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Avatar, Box, ButtonBase } from '@mui/material';
+import { Avatar, Box, ButtonBase, FormControlLabel, Typography } from '@mui/material';
 
 // project imports
 import LogoSection from '../LogoSection';
-import SearchSection from './SearchSection';
-import ProfileSection from './ProfileSection';
 import NotificationSection from './NotificationSection';
+// import SearchSection from './SearchSection';
+// import ProfileSection from './ProfileSection';
 
 // assets
 import { IconMenu2 } from '@tabler/icons';
@@ -40,11 +40,12 @@ const Header = ({ handleLeftDrawerToggle }) => {
               ...theme.typography.commonAvatar,
               ...theme.typography.mediumAvatar,
               transition: 'all .2s ease-in-out',
-              background: theme.palette.secondary.light,
-              color: theme.palette.secondary.dark,
+              // background: theme.palette.primary.light,
+              background: '#fff',
+              color: theme.palette.custom.welldone,
               '&:hover': {
-                background: theme.palette.secondary.dark,
-                color: theme.palette.secondary.light
+                background: theme.palette.primary.dark,
+                color: theme.palette.primary.light
               }
             }}
             onClick={handleLeftDrawerToggle}
@@ -56,13 +57,26 @@ const Header = ({ handleLeftDrawerToggle }) => {
       </Box>
 
       {/* header search */}
-      <SearchSection />
+      {/* <SearchSection /> */}
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ flexGrow: 1 }} />
 
       {/* notification & profile */}
       <NotificationSection />
-      <ProfileSection />
+      {/* <ProfileSection /> */}
+      <FormControlLabel
+        control={
+          <Typography
+            variant="body2"
+            sx={{
+              cursor: 'default'
+            }}
+          >
+            돌아온 병든튀김
+          </Typography>
+        }
+        label=""
+      />
     </>
   );
 };

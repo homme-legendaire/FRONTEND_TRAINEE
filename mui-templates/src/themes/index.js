@@ -25,8 +25,10 @@ export const theme = (customization) => {
     darkTextPrimary: color.grey700,
     darkTextSecondary: color.grey500,
     textDark: color.grey900,
-    menuSelected: color.secondaryDark,
-    menuSelectedBack: color.secondaryLight,
+    menuSelected: color.primaryDark,
+    menuSelectedBack: color.primaryLight,
+    menuHover: color.primaryDark,
+    menuHoverBack: color.primaryLight,
     divider: color.grey200,
     customization
   };
@@ -37,7 +39,7 @@ export const theme = (customization) => {
     mixins: {
       toolbar: {
         minHeight: '48px',
-        padding: '16px',
+        padding: '12px',
         '@media (min-width: 600px)': {
           minHeight: '48px'
         }

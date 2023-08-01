@@ -29,12 +29,19 @@ const MainRoutes = {
     },
     {
       path: 'dashboard',
-      children: [
-        {
-          path: 'default',
-          element: <DashboardDefault />
-        }
-      ]
+      element: <DashboardDefault />
+    },
+    {
+      path: 'bots',
+      element: <DashboardDefault />
+    },
+    {
+      path: 'orderHistory',
+      element: <DashboardDefault />
+    },
+    {
+      path: 'settings',
+      element: <DashboardDefault />
     },
     {
       path: 'utils',

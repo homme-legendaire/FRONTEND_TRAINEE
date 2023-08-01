@@ -89,10 +89,10 @@ export default function themeTypography(theme) {
     mainContent: {
       backgroundColor: theme.background,
       width: '100%',
-      minHeight: 'calc(100vh - 88px)',
+      minHeight: 'calc(100vh - 60px)',
       flexGrow: 1,
       padding: '20px',
-      marginTop: '88px',
+      marginTop: '60px',
       marginRight: '20px',
       borderRadius: `${theme?.customization?.borderRadius}px`
     },
@@ -125,6 +125,25 @@ export default function themeTypography(theme) {
       fontSize: '1.2rem'
     },
     largeAvatar: {
+      width: '44px',
+      height: '44px',
+      fontSize: '1.5rem'
+    },
+    commonBadge: {
+      cursor: 'pointer',
+      borderRadius: '8px'
+    },
+    smallBadge: {
+      width: '22px',
+      height: '22px',
+      fontSize: '1rem'
+    },
+    mediumBadge: {
+      width: '34px',
+      height: '34px',
+      fontSize: '1.2rem'
+    },
+    largeBadge: {
       width: '44px',
       height: '44px',
       fontSize: '1.5rem'

@@ -13,15 +13,21 @@ import { store } from 'store';
 import 'assets/scss/style.scss';
 import config from './config';
 
+import { IntlProvider } from 'react-intl';
+
+const defaultLang = localStorage.getItem('lang') || 'en';
+
 // ==============================|| REACT DOM RENDER  ||============================== //
 
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
   <Provider store={store}>
-    <BrowserRouter basename={config.basename}>
-      <App />
-    </BrowserRouter>
+    <IntlProvider locale={defaultLang} messages={require(`./locale/${defaultLang}.json`)}>
+      <BrowserRouter basename={config.basename}>
+        <App />
+      </BrowserRouter>
+    </IntlProvider>
   </Provider>
 );
 

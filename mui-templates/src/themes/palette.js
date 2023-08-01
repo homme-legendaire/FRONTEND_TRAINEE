@@ -68,6 +68,16 @@ export default function themePalette(theme) {
     background: {
       paper: theme.paper,
       default: theme.backgroundDefault
+    },
+    custom: {
+      medium: 'a4a4a4',
+      welldone: '#767676',
+      light: '#f9f9f9',
+      heavy: '#323232',
+      main: '4073F2',
+      regularlight: '#f0f0f0',
+      lightblue: '#f4f7ff',
+      red: '#ff5252'
     }
   };
 }

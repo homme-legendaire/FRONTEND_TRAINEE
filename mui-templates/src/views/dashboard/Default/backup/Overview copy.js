@@ -16,7 +16,8 @@ import MainCard from 'ui-component/cards/MainCard';
 import { gridSpacing } from 'store/constant';
 
 // chart data
-import chartData from './chart/total-growth-bar-chart';
+import chartData from './chart-data/total-growth-bar-chart';
+import { FormattedMessage } from 'react-intl';
 
 const status = [
   {
@@ -35,7 +36,7 @@ const status = [
 
 // ==============================|| DASHBOARD DEFAULT - TOTAL GROWTH BAR CHART ||============================== //
 
-const RunningBotStats = ({ isLoading }) => {
+const Overview = ({ isLoading }) => {
   const [value, setValue] = useState('today');
   const theme = useTheme();
   const customization = useSelector((state) => state.customization);
@@ -101,11 +102,13 @@ const RunningBotStats = ({ isLoading }) => {
                   <Grid container direction="column" spacing={1}>
                     <Grid item>
                       <Typography sx={{ fontSize: '24px', fontWeight: 600, color: theme.palette.primary.dark }}>
-                        Running Bot Stats
+                        <FormattedMessage id="Overview" />
                       </Typography>
                     </Grid>
                     <Grid item>
-                      <Typography variant="subtitle2">Total Growth</Typography>
+                      <Typography variant="subtitle2">
+                        <FormattedMessage id="Total Growth" />
+                      </Typography>
                     </Grid>
                     <Grid item>
                       <Typography variant="h3">$2,324.00</Typography>
@@ -133,8 +136,8 @@ const RunningBotStats = ({ isLoading }) => {
   );
 };
 
-RunningBotStats.propTypes = {
+Overview.propTypes = {
   isLoading: PropTypes.bool
 };
 
-export default RunningBotStats;
+export default Overview;

@@ -57,17 +57,17 @@ export default function componentStyleOverrides(theme) {
             color: theme.menuSelected,
             backgroundColor: theme.menuSelectedBack,
             '&:hover': {
-              backgroundColor: theme.menuSelectedBack
+              backgroundColor: theme.menuHoverBack
             },
             '& .MuiListItemIcon-root': {
               color: theme.menuSelected
             }
           },
           '&:hover': {
-            backgroundColor: theme.menuSelectedBack,
-            color: theme.menuSelected,
+            backgroundColor: theme.menuHoverBack,
+            color: theme.menuHover,
             '& .MuiListItemIcon-root': {
-              color: theme.menuSelected
+              color: theme.menuHover
             }
           }
         }
@@ -158,14 +158,14 @@ export default function componentStyleOverrides(theme) {
         }
       }
     },
-    MuiAvatar: {
-      styleOverrides: {
-        root: {
-          color: theme.colors?.primaryDark,
-          background: theme.colors?.primary200
-        }
-      }
-    },
+    // MuiAvatar: {
+    //   styleOverrides: {
+    //     root: {
+    //       color: theme.colors?.primaryDark
+    //       background: theme.colors?.primary200
+    //     }
+    //   }
+    // },
     MuiChip: {
       styleOverrides: {
         root: {
