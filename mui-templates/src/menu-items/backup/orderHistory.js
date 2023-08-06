@@ -8,7 +8,7 @@ const icons = { IconList };
 
 const orderHistory = {
   id: 'orderHistory',
-  title: 'OrderHistory',
+  // title: 'OrderHistory',
   type: 'group',
   children: [
     {

@@ -58,6 +58,9 @@ const NavItem = ({ item, level }) => {
       .toString()
       .split('/')
       .findIndex((id) => id === item.id);
+    console.log('PATH', document.location.pathname.toString().split('/'));
+    console.log('INDEX', currentIndex);
+    console.log('ID', item.id);
     if (currentIndex > -1) {
       dispatch({ type: MENU_OPEN, id: item.id });
     }

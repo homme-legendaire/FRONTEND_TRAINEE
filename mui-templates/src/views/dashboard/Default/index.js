@@ -39,9 +39,6 @@ const Dashboard = () => {
           <Grid item xs={12} sm={6} md={6} lg={7}>
             <Positions isLoading={isLoading} />
           </Grid>
-          {/* <Grid item xs={12} sm={6} md={6} lg={4}>
-            <TotalOrderLineChartCard isLoading={isLoading} />
-          </Grid> */}
           <Grid item xs={12} sm={12} md={12} lg={5}>
             <Grid container spacing={gridSpacing}>
               <Grid item xs={6}>

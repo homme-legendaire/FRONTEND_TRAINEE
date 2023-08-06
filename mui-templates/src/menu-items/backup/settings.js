@@ -8,7 +8,7 @@ const icons = { IconSettings };
 
 const settings = {
   id: 'settings',
-  title: 'Settings',
+  // title: 'Settings',
   type: 'group',
   children: [
     {

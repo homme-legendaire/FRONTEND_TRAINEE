@@ -8,7 +8,7 @@ const icons = { IconGauge };
 
 const bots = {
   id: 'bots',
-  title: 'Bots',
+  // title: 'Bots',
   type: 'group',
   children: [
     {

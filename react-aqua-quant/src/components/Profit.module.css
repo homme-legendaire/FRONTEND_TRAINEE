@@ -1,0 +1,68 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 53%;
+  margin: 1% 1% 1% 0;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.accumBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 3% 0 3% 0;
+}
+
+.accumLabel {
+  color: var(--well-done);
+  font-weight: 500;
+}
+
+.accumButton {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.accumSelect {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.accumButtonBox {
+  color: var(--medium);
+  text-align: center;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.accumButtonBoxSelected {
+  background-color: var(--main);
+  text-align: center;
+  font-weight: 700;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.accumButtonBox label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+
+.accumButtonBoxSelected label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+
+.accumButtonBox:hover {
+  background-color: var(--light-blue);
+}

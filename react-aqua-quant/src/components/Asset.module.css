@@ -1,0 +1,37 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 43%;
+  margin: 1% 0 1% 1%;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.subTitle {
+  color: var(--well-done);
+  font-weight: 500;
+  margin-left: 4%;
+}
+
+.updateBox {
+  display: flex;
+  flex-direction: row;
+  color: #4073f2;
+  margin: 3% 0 3% 0;
+  font-weight: 500;
+  line-height: 1;
+  align-items: center;
+}
+
+.updateBox svg {
+  cursor: pointer;
+}
+
+.updateBox label {
+  margin-left: 1%;
+  cursor: pointer;
+}
