@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -215,10 +214,6 @@ const Overview = ({ isLoading }) => {
       )}
     </>
   );
-};
-
-Overview.propTypes = {
-  isLoading: PropTypes.bool
 };
 
 export default Overview;

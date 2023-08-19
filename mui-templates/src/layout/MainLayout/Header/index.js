@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Box, ButtonBase, FormControlLabel, Typography } from '@mui/material';
@@ -79,10 +77,6 @@ const Header = ({ handleLeftDrawerToggle }) => {
       />
     </>
   );
-};
-
-Header.propTypes = {
-  handleLeftDrawerToggle: PropTypes.func
 };
 
 export default Header;

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 // material-ui
 import { styled, useTheme } from '@mui/material/styles';
 import {
@@ -36,17 +34,7 @@ const CardStyle = styled(Card)(({ theme }) => ({
   background: theme.palette.primary.light,
   marginBottom: '22px',
   overflow: 'hidden',
-  position: 'relative',
-  '&:after': {
-    content: '""',
-    position: 'absolute',
-    width: '157px',
-    height: '157px',
-    background: theme.palette.primary[200],
-    borderRadius: '50%',
-    top: '-105px',
-    right: '-96px'
-  }
+  position: 'relative'
 }));
 
 // ==============================|| PROGRESS BAR WITH LABEL ||============================== //
@@ -74,10 +62,6 @@ function LinearProgressWithLabel({ value, ...others }) {
     </Grid>
   );
 }
-
-LinearProgressWithLabel.propTypes = {
-  value: PropTypes.number
-};
 
 // ==============================|| SIDEBAR MENU Card ||============================== //
 

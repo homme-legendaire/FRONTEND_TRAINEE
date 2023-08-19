@@ -3,12 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+// import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import Dashboard from "./Dashboard";
-import Bots from "./Bots";
-import OrderHistory from "./OrderHistory";
-import Settings from "./Settings";
+import App from "./App";
+import { RecoilRoot } from "recoil";
 
 const defaultLang = localStorage.getItem("lang") || "en";
 
@@ -19,15 +18,11 @@ root.render(
       locale={defaultLang}
       messages={require(`./locale/${defaultLang}.json`)}
     >
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/bots" element={<Bots />} />
-          <Route path="/order-history" element={<OrderHistory />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/*" element={<Navigate to="/" />} />
-        </Routes>
-      </HashRouter>
+      <BrowserRouter basename={"/"}>
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
+      </BrowserRouter>
     </IntlProvider>
   </React.StrictMode>
 );

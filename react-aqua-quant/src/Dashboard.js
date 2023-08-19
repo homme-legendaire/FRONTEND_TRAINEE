@@ -1,34 +1,41 @@
-import Header from "./components/Header";
-import NavBar from "./components/NavBar";
+import { Grid } from "@mui/material";
 import Overview from "./components/Overview";
 import styles from "./Dashboard.module.css";
 
 const Dashboard = () => {
   return (
-    <div className={styles.app}>
-      <NavBar />
-      <div className={styles.mainContainer}>
-        <Header />
+    <Grid container spacing={3}>
+      <Grid item xs={12}>
         <Overview />
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-        <h1>Dashboard</h1>
-      </div>
-    </div>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={7}>
+            RunningBotStats
+          </Grid>
+          <Grid item xs={12} md={5}>
+            Notice
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={6} lg={7}>
+            Positions
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={5}>
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
+                telegram
+              </Grid>
+              <Grid item xs={6}>
+                ad
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

@@ -1,1 +1,14 @@
-{}
+{
+  "Dashboard": "Dashboard",
+  "Bots": "Bots",
+  "Order History": "Order History",
+  "Settings": "Settings",
+  "Overview": "Overview",
+  "Log out": "Log out",
+  "Profit (USDT)": "Profit (USDT)",
+  "1D": "1D",
+  "1W": "1W",
+  "1M": "1M",
+  "1Y": "1Y",
+  "Update asset data": "Update asset data"
+}

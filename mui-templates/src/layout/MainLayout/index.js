@@ -9,7 +9,6 @@ import { AppBar, Box, CssBaseline, Toolbar, useMediaQuery } from '@mui/material'
 import Breadcrumbs from 'ui-component/extended/Breadcrumbs';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import Customization from '../Customization';
 import navigation from 'menu-items';
 import { drawerWidth } from 'store/constant';
 import { SET_MENU } from 'store/actions';
@@ -23,6 +22,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
   borderBottomLeftRadius: 0,
   borderBottomRightRadius: 0,
   transition: theme.transitions.create(
+    // 사이드바 열고 닫을때 트랜지션 효과
     'margin',
     open
       ? {
@@ -65,7 +65,7 @@ const MainLayout = () => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       {/* header */}
       <AppBar
         enableColorOnDark
@@ -91,7 +91,6 @@ const MainLayout = () => {
         <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign />
         <Outlet />
       </Main>
-      <Customization />
     </Box>
   );
 };

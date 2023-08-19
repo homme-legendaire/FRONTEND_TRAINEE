@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -131,10 +130,6 @@ const RunningBotStats = ({ isLoading }) => {
       )}
     </>
   );
-};
-
-RunningBotStats.propTypes = {
-  isLoading: PropTypes.bool
 };
 
 export default RunningBotStats;
