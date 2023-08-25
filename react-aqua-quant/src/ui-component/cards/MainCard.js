@@ -44,6 +44,7 @@ const MainCard = forwardRef(
           border: "none",
           borderColor: theme.palette.primary[200] + 25,
           boxShadow: "inherit",
+          p: "0.35rem",
           ...sx,
         }}
       >

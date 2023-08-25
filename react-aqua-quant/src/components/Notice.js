@@ -13,18 +13,17 @@ import { FormattedMessage } from "react-intl";
 
 import theme from "../themes";
 
-const createData = (name, ticker, win, lose, winRate, createdDate) => {
-  return { name, ticker, win, lose, winRate, createdDate };
+const createData = (title, author, createdDate) => {
+  return { title, author, createdDate };
 };
 
 const rows = [
-  createData("RSI 1h", "BTCUSDT", 130, 22, 85.2, "2023-07-17"),
-  createData("Bollinger Band 2h", "ETHUSDT", 55, 7, 93.5, "2023-07-16"),
-  createData("RSI 15m", "SOLUSDT", 1104, 135, 88.7, "2023-07-15"),
-  createData("Dual Martin v3 4h", "DOGEUSDT", 4522, 12, 99.3, "2023-07-13"),
+  createData("RSI 1h", "Inclease lab", "2023-07-17"),
+  createData("Bollinger Band 2h", "Inclease lab", "2023-07-16"),
+  createData("RSI 15m", "Inclease lab", "2023-07-16"),
 ];
 
-const RunningBotStats = () => {
+const Notice = () => {
   const currentDate = new Date();
   return (
     <MainCard>
@@ -36,7 +35,7 @@ const RunningBotStats = () => {
               color: theme.palette.custom.main,
             }}
           >
-            <FormattedMessage id="Running Bot Stats" />
+            <FormattedMessage id="Notice" />
           </Typography>
         </Grid>
         <TableContainer sx={{ height: "14.375rem" }}>
@@ -52,19 +51,10 @@ const RunningBotStats = () => {
                 }}
               >
                 <TableCell>
-                  <FormattedMessage id="Name" />
+                  <FormattedMessage id="Title" />
                 </TableCell>
                 <TableCell>
-                  <FormattedMessage id="Ticker" />
-                </TableCell>
-                <TableCell>
-                  <FormattedMessage id="Win" />
-                </TableCell>
-                <TableCell>
-                  <FormattedMessage id="Lose" />
-                </TableCell>
-                <TableCell>
-                  <FormattedMessage id="Win Rate" />
+                  <FormattedMessage id="Author" />
                 </TableCell>
                 <TableCell>
                   <FormattedMessage id="Created" />
@@ -74,7 +64,7 @@ const RunningBotStats = () => {
             <TableBody>
               {rows.map((row) => (
                 <TableRow
-                  key={row.name}
+                  key={row.title}
                   hover
                   sx={{
                     ".MuiTableCell-root": {
@@ -90,23 +80,8 @@ const RunningBotStats = () => {
                     "&:last-child td, &:last-child th": { border: 0 },
                   }}
                 >
-                  <TableCell>{row.name}</TableCell>
-                  <TableCell>{row.ticker}</TableCell>
-                  <TableCell
-                    sx={{
-                      color: theme.palette.custom.main + " !important",
-                    }}
-                  >
-                    {row.win}
-                  </TableCell>
-                  <TableCell
-                    sx={{
-                      color: theme.palette.custom.red + " !important",
-                    }}
-                  >
-                    {row.lose}
-                  </TableCell>
-                  <TableCell>{row.winRate + "%"}</TableCell>
+                  <TableCell>{row.title}</TableCell>
+                  <TableCell>{row.author}</TableCell>
                   <TableCell>{row.createdDate}</TableCell>
                 </TableRow>
               ))}
@@ -118,4 +93,4 @@ const RunningBotStats = () => {
   );
 };
 
-export default RunningBotStats;
+export default Notice;

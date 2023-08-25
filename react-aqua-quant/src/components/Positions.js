@@ -13,18 +13,24 @@ import { FormattedMessage } from "react-intl";
 
 import theme from "../themes";
 
-const createData = (name, ticker, win, lose, winRate, createdDate) => {
-  return { name, ticker, win, lose, winRate, createdDate };
+const createData = (
+  side,
+  ticker,
+  leverage,
+  quantity,
+  roe,
+  entryPrice,
+  value
+) => {
+  return { side, ticker, leverage, quantity, roe, entryPrice, value };
 };
 
 const rows = [
-  createData("RSI 1h", "BTCUSDT", 130, 22, 85.2, "2023-07-17"),
-  createData("Bollinger Band 2h", "ETHUSDT", 55, 7, 93.5, "2023-07-16"),
-  createData("RSI 15m", "SOLUSDT", 1104, 135, 88.7, "2023-07-15"),
-  createData("Dual Martin v3 4h", "DOGEUSDT", 4522, 12, 99.3, "2023-07-13"),
+  createData("Long", "BTCUSDT", 10, 0.05, 30.15, 30157.15, 15473.11),
+  createData("Short", "ETHUSDT", 30, 0.2, -12.57, 1978.87, 7869.34),
 ];
 
-const RunningBotStats = () => {
+const Positions = () => {
   const currentDate = new Date();
   return (
     <MainCard>
@@ -36,10 +42,10 @@ const RunningBotStats = () => {
               color: theme.palette.custom.main,
             }}
           >
-            <FormattedMessage id="Running Bot Stats" />
+            <FormattedMessage id="Positions" />
           </Typography>
         </Grid>
-        <TableContainer sx={{ height: "14.375rem" }}>
+        <TableContainer sx={{ height: "11.25rem" }}>
           <Table>
             <TableHead>
               <TableRow
@@ -52,31 +58,36 @@ const RunningBotStats = () => {
                 }}
               >
                 <TableCell>
-                  <FormattedMessage id="Name" />
+                  <FormattedMessage id="Side" />
                 </TableCell>
                 <TableCell>
                   <FormattedMessage id="Ticker" />
                 </TableCell>
                 <TableCell>
-                  <FormattedMessage id="Win" />
+                  <FormattedMessage id="Leverage" />
                 </TableCell>
                 <TableCell>
-                  <FormattedMessage id="Lose" />
+                  <FormattedMessage id="Quantity" />
                 </TableCell>
                 <TableCell>
-                  <FormattedMessage id="Win Rate" />
+                  <FormattedMessage id="ROE" />
                 </TableCell>
                 <TableCell>
-                  <FormattedMessage id="Created" />
+                  <FormattedMessage id="Entry Price" />
+                </TableCell>
+                <TableCell>
+                  <FormattedMessage id="Value" />
                 </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {rows.map((row) => (
                 <TableRow
-                  key={row.name}
+                  key={row.ticker}
                   hover
                   sx={{
+                    backgroundColor:
+                      row.side === "Long" ? "#F0FFF4" : "#FFF9FD",
                     ".MuiTableCell-root": {
                       ...theme.typography.body1,
                       color: theme.palette.custom.heavy,
@@ -90,24 +101,31 @@ const RunningBotStats = () => {
                     "&:last-child td, &:last-child th": { border: 0 },
                   }}
                 >
-                  <TableCell>{row.name}</TableCell>
+                  <TableCell
+                    sx={{
+                      color:
+                        row.side === "Long"
+                          ? "#2CBB54 !important"
+                          : theme.palette.custom.red + "!important",
+                    }}
+                  >
+                    {row.side}
+                  </TableCell>
                   <TableCell>{row.ticker}</TableCell>
+                  <TableCell>{row.leverage}</TableCell>
+                  <TableCell>{row.quantity}</TableCell>
                   <TableCell
                     sx={{
-                      color: theme.palette.custom.main + " !important",
+                      color:
+                        row.roe >= 0
+                          ? theme.palette.custom.main + "!important"
+                          : theme.palette.custom.red + "!important",
                     }}
                   >
-                    {row.win}
+                    {row.roe}%
                   </TableCell>
-                  <TableCell
-                    sx={{
-                      color: theme.palette.custom.red + " !important",
-                    }}
-                  >
-                    {row.lose}
-                  </TableCell>
-                  <TableCell>{row.winRate + "%"}</TableCell>
-                  <TableCell>{row.createdDate}</TableCell>
+                  <TableCell>{row.entryPrice}</TableCell>
+                  <TableCell>{row.value}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -118,4 +136,4 @@ const RunningBotStats = () => {
   );
 };
 
-export default RunningBotStats;
+export default Positions;

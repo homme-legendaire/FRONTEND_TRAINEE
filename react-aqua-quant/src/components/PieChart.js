@@ -1,36 +1,52 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
-import { List, ListItem, ListItemText } from "@mui/material";
+import theme from "../themes";
 
 const AssetPieChart = ({ data, colors }) => {
-  const customLegend = (props) => {
-    const { payload } = props;
-    return (
-      <List
-        sx={{
-          ".MuiTypography-root": {
-            fontSize: "14px",
-          },
-        }}
-      >
-        {payload.map(
-          (entry, index) => (
-            console.log(index, entry),
-            (
-              <ListItem key={index}>
-                <svg width="12" height="12">
-                  <rect width="12" height="12" fill={entry.color} />
-                </svg>
-                <ListItemText primary={entry.value} />
-                <ListItemText primary={entry.payload.amount} />
-                <ListItemText primary={entry.payload.value} />
-                <ListItemText primary={entry.payload.percent * 100} />
-              </ListItem>
-            )
-          )
-        )}
-      </List>
-    );
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      const dataPoint = payload[0].payload;
+
+      return (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            backgroundColor: "#ffffff",
+            padding: "8px",
+            borderRadius: "4px",
+            fontSize: "0.75rem",
+            boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)",
+          }}
+        >
+          <div>{dataPoint.name}</div>
+          <div>
+            <span
+              style={{
+                marginLeft: "15px",
+                color: theme.palette.custom.wellDone,
+              }}
+            >
+              {dataPoint.value.toFixed(2)}
+            </span>
+            USDT
+            <span
+              style={{
+                color: theme.palette.custom.wellDone,
+              }}
+            >
+              (
+              {(
+                (dataPoint.value / data.reduce((a, b) => a + b.value, 0)) *
+                100
+              ).toFixed(2)}
+              %)
+            </span>
+          </div>
+        </div>
+      );
+    }
+    return null;
   };
   return (
     <ResponsiveContainer width="100%" height={230}>
@@ -50,13 +66,7 @@ const AssetPieChart = ({ data, colors }) => {
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
           ))}
         </Pie>
-        <Tooltip />
-        {/* <Legend
-          layout="vertical"
-          align="right"
-          verticalAlign="middle"
-          content={customLegend}
-        /> */}
+        <Tooltip content={<CustomTooltip />} />
       </PieChart>
     </ResponsiveContainer>
   );

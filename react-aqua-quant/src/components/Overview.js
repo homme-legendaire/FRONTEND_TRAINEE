@@ -1,6 +1,5 @@
 import { FormattedMessage } from "react-intl";
 import Asset from "./Asset";
-import styles from "./Overview.module.css";
 import Profit from "./Profit";
 import MainCard from "../ui-component/cards/MainCard";
 import { Divider, Grid, Typography } from "@mui/material";
@@ -12,18 +11,14 @@ const Overview = () => {
     <MainCard>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Grid item>
-            <Grid item>
-              <Typography
-                sx={{
-                  ...theme.typography.mainTitle,
-                  color: theme.palette.custom.main,
-                }}
-              >
-                <FormattedMessage id="Overview" />
-              </Typography>
-            </Grid>
-          </Grid>
+          <Typography
+            sx={{
+              ...theme.typography.mainTitle,
+              color: theme.palette.custom.main,
+            }}
+          >
+            <FormattedMessage id="Overview" />
+          </Typography>
         </Grid>
         <Profit />
         <Divider
