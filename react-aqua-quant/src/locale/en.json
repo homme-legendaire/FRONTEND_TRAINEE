@@ -15,5 +15,19 @@
   "Name": "Name",
   "Ticker": "Ticker",
   "Win": "Win",
-  "Lose": "Lose"
+  "Lose": "Lose",
+  "Last update": "Last update",
+  "Win Rate": "Win Rate",
+  "Created": "Created",
+  "Notice": "Notice",
+  "Title": "Title",
+  "Author": "Author",
+  "Positions": "Positions",
+  "Side": "Side",
+  "Leverage": "Leverage",
+  "Quantity": "Quantity",
+  "ROE": "ROE",
+  "Entry Price": "Entry Price",
+  "Value": "Value",
+  "Chat Room": "Chat Room"
 }
