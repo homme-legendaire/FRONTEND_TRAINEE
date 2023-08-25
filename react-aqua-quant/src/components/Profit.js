@@ -2,17 +2,23 @@ import { useState, useRef } from "react";
 import { FormattedMessage } from "react-intl";
 
 import ProfitAreaChart from "./AreaChart";
-import { Button, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  Grid,
+  Typography,
+} from "@mui/material";
 
 import theme from "../themes";
 import { useRecoilValue } from "recoil";
 import { customizationState } from "../atom";
 
 const Profit = () => {
-  const [profit, setProfit] = useState(95.15);
+  const [totalProfit, setTotalProfit] = useState(95.15);
   const [accum, setAccum] = useState("1D");
   const profitRef = useRef(null);
-  // const [areaWidth, setAreaWidth] = useState(0);
   const [chartData, setChartData] = useState([
     { name: "31", profit: 10 },
     { name: "01", profit: 8 },
@@ -69,27 +75,38 @@ const Profit = () => {
         ref={profitRef}
       >
         <Grid item xs={12}>
-          <Typography sx={{ fontSize: "32px", fontWeight: 500, color: "#000" }}>
-            {profit} USDT
-          </Typography>
+          <Typography variant="subTitle1">{totalProfit} USDT</Typography>
         </Grid>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Typography
               sx={{
-                fontSize: "14px",
-                fontWeight: 500,
+                ...theme.typography.body1,
                 color: theme.palette.custom.wellDone,
               }}
             >
               <FormattedMessage id="Profit (USDT)" />
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid item sx={{ display: "flex", justifyContent: "space-between" }}>
             <Button
               sx={{
-                fontSize: "14px",
+                ...theme.typography.body1,
                 fontWeight: 700,
+                p: 0,
+                mx: "5px",
+                "&:hover":
+                  accum === "1D"
+                    ? {
+                        backgroundColor: theme.palette.custom.main,
+                        color: "#fff",
+                      }
+                    : {
+                        backgroundColor: theme.palette.custom.lightBlue,
+                      },
+                color: accum === "1D" ? "#fff" : theme.palette.custom.medium,
+                backgroundColor:
+                  accum === "1D" ? theme.palette.custom.main : "#fff",
               }}
               disableRipple
               id="1D"
@@ -100,8 +117,22 @@ const Profit = () => {
             </Button>
             <Button
               sx={{
-                fontSize: "14px",
+                ...theme.typography.body1,
                 fontWeight: 700,
+                p: 0,
+                mx: "5px",
+                "&:hover":
+                  accum === "1W"
+                    ? {
+                        backgroundColor: theme.palette.custom.main,
+                        color: "#fff",
+                      }
+                    : {
+                        backgroundColor: theme.palette.custom.lightBlue,
+                      },
+                color: accum === "1W" ? "#fff" : theme.palette.custom.medium,
+                backgroundColor:
+                  accum === "1W" ? theme.palette.custom.main : "#fff",
               }}
               disableRipple
               id="1W"
@@ -112,11 +143,19 @@ const Profit = () => {
             </Button>
             <Button
               sx={{
-                fontSize: "14px",
+                ...theme.typography.body1,
                 fontWeight: 700,
-                "&:hover": {
-                  backgroundColor: theme.palette.custom.lightBlue,
-                },
+                p: 0,
+                mx: "5px",
+                "&:hover":
+                  accum === "1M"
+                    ? {
+                        backgroundColor: theme.palette.custom.main,
+                        color: "#fff",
+                      }
+                    : {
+                        backgroundColor: theme.palette.custom.lightBlue,
+                      },
                 color: accum === "1M" ? "#fff" : theme.palette.custom.medium,
                 backgroundColor:
                   accum === "1M" ? theme.palette.custom.main : "#fff",
@@ -130,11 +169,19 @@ const Profit = () => {
             </Button>
             <Button
               sx={{
-                fontSize: "14px",
+                ...theme.typography.body1,
                 fontWeight: 700,
-                "&:hover": {
-                  backgroundColor: theme.palette.custom.lightBlue,
-                },
+                p: 0,
+                ml: "5px",
+                "&:hover":
+                  accum === "1Y"
+                    ? {
+                        backgroundColor: theme.palette.custom.main,
+                        color: "#fff",
+                      }
+                    : {
+                        backgroundColor: theme.palette.custom.lightBlue,
+                      },
                 color: accum === "1Y" ? "#fff" : theme.palette.custom.medium,
                 backgroundColor:
                   accum === "1Y" ? theme.palette.custom.main : "#fff",

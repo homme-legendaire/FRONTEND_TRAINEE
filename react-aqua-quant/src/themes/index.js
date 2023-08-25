@@ -9,6 +9,7 @@ const themePalette = {
     main: "#4073f2",
     regularLight: "#f0f0f0",
     red: "#ff5252",
+    light: "#f9f9f9",
   },
   error: {
     main: "#ff5252",
@@ -25,17 +26,8 @@ const theme = createTheme({
           fontWeight: 500,
           borderRadius: "4px",
           color: "black",
-          "&$selected": {
-            backgroundColor: themePalette.custom.main,
-            color: "#fff",
-            "&:hover": {
-              backgroundColor: themePalette.custom.main,
-              color: "#fff",
-            },
-          },
           "&:hover": {
             backgroundColor: themePalette.custom.lightBlue,
-            color: themePalette.custom.red,
           },
         },
       },
@@ -59,10 +51,6 @@ const theme = createTheme({
           },
           "&:hover": {
             backgroundColor: themePalette.custom.lightBlue,
-            // color: theme.menuHover,
-            // "& .MuiListItemIcon-root": {
-            //   color: theme.menuHover,
-            // },
           },
         },
         MuiPaper: {
@@ -91,13 +79,33 @@ const theme = createTheme({
     },
   },
   typography: {
+    sideBarTitle: {
+      fontWeight: 600,
+      fontSize: "1rem",
+    },
+    mainTitle: {
+      fontWeight: 600,
+      fontSize: "1.5rem",
+    },
+    subTitle1: {
+      fontWeigth: 500,
+      fontSize: "2rem",
+    },
+    subtitle2: {
+      fontSize: "0.75rem",
+      fontWeight: 400,
+    },
+    body1: {
+      fontWeight: 500,
+      fontSize: "0.875rem",
+    },
     h6: {
       fontWeight: 500,
       fontSize: "0.75rem",
     },
     h5: {
       fontSize: "0.875rem",
-      fontWeight: 500,
+      fontWeight: 600,
     },
     h4: {
       fontSize: "1rem",
@@ -115,27 +123,9 @@ const theme = createTheme({
       fontSize: "2.125rem",
       fontWeight: 700,
     },
-    subtitle1: {
-      fontSize: "0.875rem",
-      fontWeight: 500,
-    },
-    subtitle2: {
-      fontSize: "0.75rem",
-      fontWeight: 400,
-    },
     caption: {
       fontSize: "0.75rem",
       fontWeight: 400,
-    },
-    body1: {
-      fontSize: "0.875rem",
-      fontWeight: 400,
-      lineHeight: "1.334em",
-    },
-    body2: {
-      letterSpacing: "0em",
-      fontWeight: 400,
-      lineHeight: "1.5em",
     },
     button: {
       textTransform: "capitalize",

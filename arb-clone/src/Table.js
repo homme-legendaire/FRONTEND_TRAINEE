@@ -176,7 +176,7 @@ const GimpTable = () => {
   );
 
   const fetchTickerPrice = () => {
-    fetch("https://3.38.126.106:8000/fetchPrice", {
+    fetch("https://api.aqua-quant.com/fetchPrice", {
       method: "GET",
     })
       .then((res) => res.json())

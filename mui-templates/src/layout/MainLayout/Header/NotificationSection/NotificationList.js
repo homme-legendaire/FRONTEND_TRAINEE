@@ -182,6 +182,412 @@ const NotificationList = () => {
           </ListItem>
         </Grid>
       </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
+      <Divider />
+      <ListItemWrapper>
+        <Grid container direction="column" className="list-container">
+          <Grid item xs={12}>
+            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
+              It is a long established fact that a reader will be distracted
+            </Typography>
+          </Grid>
+          <ListItem alignItems="center">
+            <Grid container justifyContent="flex-end">
+              <Grid item xs={12}>
+                <Typography variant="caption" display="block" color={theme.palette.custom.welldone}>
+                  2 min ago
+                </Typography>
+              </Grid>
+            </Grid>
+            <ListItemAvatar>
+              <Avatar
+                sx={{
+                  color: theme.palette.custom.welldone,
+                  backgroundColor: 'inherit'
+                }}
+              >
+                <IconTrash stroke={1.5} size="1rem" />
+              </Avatar>
+            </ListItemAvatar>
+          </ListItem>
+        </Grid>
+      </ListItemWrapper>
     </List>
   );
 };

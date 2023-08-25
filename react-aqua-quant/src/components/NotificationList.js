@@ -1,16 +1,17 @@
 // material-ui
 import { styled } from "@mui/material/styles";
 import {
-  Avatar,
-  Divider,
+  Box,
   Grid,
   List,
   ListItem,
-  ListItemAvatar,
+  ListItemIcon,
+  ListItemText,
   Typography,
 } from "@mui/material";
 import { Trash } from "tabler-icons-react";
 
+import { FormattedMessage } from "react-intl";
 import theme from "../themes";
 
 // styles
@@ -27,12 +28,14 @@ const ListItemWrapper = styled("div")(() => ({
 
 // ==============================|| NOTIFICATION LIST ITEM ||============================== //
 
-const NotificationList = () => {
+const NotificationList = ({ messageList, deleteMessageHandler }) => {
   return (
     <List
       sx={{
         width: "100%",
         maxWidth: 330,
+        height: "calc(50vh - 200px)",
+        overflow: "scroll",
         py: 0,
         borderRadius: "10px",
         [theme.breakpoints.down("md")]: {
@@ -41,44 +44,56 @@ const NotificationList = () => {
         "& .MuiListItemSecondaryAction-root": {
           top: 22,
         },
-        "& .MuiDivider-root": {
-          my: 0,
-        },
       }}
     >
-      <ListItemWrapper>
-        <Grid container direction="column" className="list-container">
-          <Grid item xs={12}>
-            <Typography variant="subtitle2" color={theme.palette.custom.heavy}>
-              It is a long established fact that a reader will be distracted
-            </Typography>
-          </Grid>
-          <ListItem alignItems="center">
-            <Grid container justifyContent="flex-end">
-              <Grid item xs={12}>
-                <Typography
-                  variant="caption"
-                  display="block"
-                  color={theme.palette.custom.wellDone}
-                >
-                  2 min ago
-                </Typography>
+      {messageList.length > 0 ? (
+        messageList.map((message, index) => {
+          return (
+            <ListItemWrapper key={index}>
+              <Grid container direction="column" className="list-container">
+                <Grid item xs={12}>
+                  <Typography
+                    variant="subtitle2"
+                    color={theme.palette.custom.heavy}
+                  >
+                    {message.content}
+                  </Typography>
+                </Grid>
+                <ListItem alignItems="center">
+                  <ListItemText
+                    primary={
+                      <Typography
+                        variant="caption"
+                        display="block"
+                        color={theme.palette.custom.wellDone}
+                      >
+                        {message.time}
+                      </Typography>
+                    }
+                  />
+                  <ListItemIcon
+                    sx={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      color: theme.palette.custom.wellDone,
+                      backgroundColor: "inherit",
+                    }}
+                    onClick={deleteMessageHandler}
+                  >
+                    <Trash size="1rem" />
+                  </ListItemIcon>
+                </ListItem>
               </Grid>
-            </Grid>
-            <ListItemAvatar>
-              <Avatar
-                sx={{
-                  color: theme.palette.custom.wellDone,
-                  backgroundColor: "inherit",
-                }}
-              >
-                <Trash size="1rem" />
-              </Avatar>
-            </ListItemAvatar>
-          </ListItem>
-        </Grid>
-      </ListItemWrapper>
-      <Divider />
+            </ListItemWrapper>
+          );
+        })
+      ) : (
+        <Box sx={{ m: 16 }}>
+          <Typography variant="subtitle2" color={theme.palette.custom.wellDone}>
+            <FormattedMessage id="No message" />
+          </Typography>
+        </Box>
+      )}
     </List>
   );
 };

@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import Overview from "./components/Overview";
 import styles from "./Dashboard.module.css";
+import { FormattedMessage } from "react-intl";
 
 const Dashboard = () => {
   return (
@@ -11,7 +12,7 @@ const Dashboard = () => {
       <Grid item xs={12}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={7}>
-            RunningBotStats
+            <FormattedMessage id="Running Bot Stats" />
           </Grid>
           <Grid item xs={12} md={5}>
             Notice

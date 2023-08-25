@@ -43,6 +43,44 @@ const MessageCenter = () => {
    * anchorRef is used on different componets and specifying one type leads to other components throwing an error
    * */
   const anchorRef = useRef(null);
+  const [messageList, setMessageList] = useState([
+    {
+      id: 1,
+      content:
+        "The 'RSI_BTCUSDT_15m' bot has been stopped due to shortage of margin. Change the setting of bot or add margin.",
+      time: "2023-08-30 12:54",
+    },
+    {
+      id: 2,
+      content:
+        "The 'RSI_BTCUSDT_15m' bot has been stopped due to shortage of margin. Change the setting of bot or add margin.",
+      time: "2023-08-30 12:54",
+    },
+    {
+      id: 3,
+      content:
+        "The 'RSI_BTCUSDT_15m' bot has been stopped due to shortage of margin. Change the setting of bot or add margin.",
+      time: "2023-08-30 12:54",
+    },
+    {
+      id: 4,
+      content:
+        "The 'RSI_BTCUSDT_15m' bot has been stopped due to shortage of margin. Change the setting of bot or add margin.",
+      time: "2023-08-30 12:54",
+    },
+    {
+      id: 5,
+      content:
+        "The 'RSI_BTCUSDT_15m' bot has been stopped due to shortage of margin. Change the setting of bot or add margin.",
+      time: "2023-08-30 12:54",
+    },
+    {
+      id: 6,
+      content:
+        "The 'RSI_BTCUSDT_15m' bot has been stopped due to shortage of margin. Change the setting of bot or add margin.",
+      time: "2023-08-30 12:54",
+    },
+  ]);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -62,6 +100,10 @@ const MessageCenter = () => {
     }
     prevOpen.current = open;
   }, [open]);
+
+  const deleteMessageHandler = (e) => {
+    console.log(e.target.id);
+  };
 
   return (
     <>
@@ -147,7 +189,7 @@ const MessageCenter = () => {
                       >
                         <Grid item>
                           <Stack direction="row" spacing={2}>
-                            <Typography variant="h3">Message Center</Typography>
+                            <Typography variant="h4">Message Center</Typography>
                           </Stack>
                         </Grid>
                         <Grid item>
@@ -164,15 +206,10 @@ const MessageCenter = () => {
                       </Grid>
                     </Grid>
                     <Grid item xs={12}>
-                      <PerfectScrollbar
-                        style={{
-                          height: "100%",
-                          maxHeight: "calc(100vh - 205px)",
-                          overflowX: "hidden",
-                        }}
-                      >
-                        <NotificationList />
-                      </PerfectScrollbar>
+                      <NotificationList
+                        messageList={messageList}
+                        deleteMessageHandler={deleteMessageHandler}
+                      />
                     </Grid>
                   </Grid>
                   <Divider />

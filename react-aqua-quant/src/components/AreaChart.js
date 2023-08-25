@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import theme from "../themes";
 
-const Chart = ({ data, xTicks, yTicks, width }) => {
+const Chart = ({ data, xTicks, yTicks }) => {
   const [totalProfit, setTotalProfit] = useState(71.85);
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -23,7 +23,7 @@ const Chart = ({ data, xTicks, yTicks, width }) => {
             backgroundColor: "#ffffff",
             padding: "8px",
             borderRadius: "4px",
-            fontSize: "12px",
+            fontSize: "0.75rem",
             boxShadow: "0px 2px 2px rgba(0, 0, 0, 0.25)",
           }}
         >

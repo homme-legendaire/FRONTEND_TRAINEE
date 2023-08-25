@@ -56,9 +56,6 @@ const NavItem = ({ item, level }) => {
       .toString()
       .split("/")
       .findIndex((id) => id === item.id);
-    console.log("PATH", document.location.pathname.toString().split("/"));
-    console.log("INDEX", currentIndex);
-    console.log("ID", item.id);
     if (currentIndex > -1) {
       setCustomization({ ...customization, isOpen: [item.id] });
     }
@@ -87,11 +84,12 @@ const NavItem = ({ item, level }) => {
       <ListItemText
         primary={
           <Typography
-            variant={
-              customization.isOpen.findIndex((id) => id === item.id) > -1
-                ? "h5"
-                : "body1"
-            }
+            // variant={
+            //   customization.isOpen.findIndex((id) => id === item.id) > -1
+            //     ? "sideBarTitle"
+            //     : "body1"
+            // }
+            variant="sideBarTitle"
             color="inherit"
           >
             {item.title}

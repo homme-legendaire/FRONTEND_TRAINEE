@@ -16,8 +16,7 @@ const Overview = () => {
             <Grid item>
               <Typography
                 sx={{
-                  fontSize: "24px",
-                  fontWeight: 600,
+                  ...theme.typography.mainTitle,
                   color: theme.palette.custom.main,
                 }}
               >
