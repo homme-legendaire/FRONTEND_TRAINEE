@@ -24,6 +24,7 @@ const AssetPieChart = ({ data, colors }) => {
             <span
               style={{
                 marginLeft: "15px",
+                marginRight: "5px",
                 color: theme.palette.custom.wellDone,
               }}
             >

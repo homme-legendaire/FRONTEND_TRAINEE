@@ -9,17 +9,10 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import Paper from "@mui/material/Paper";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import { visuallyHidden } from "@mui/utils";
-import { Button } from "@mui/material";
 import { useRecoilState } from "recoil";
-import { tickerPriceState } from "./atom";
+import { keyWordState } from "./atom";
 
-// Since 2020 all major browsers ensure sort stability with Array.prototype.sort().
-// stableSort() brings sort stability to non-modern browsers (notably IE11). If you
-// only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
-// with exampleArray.slice().sort(exampleComparator)
 const stableSort = (array, comparator) => {
   const stabilizedThis = array.map((el, index) => [el, index]);
   stabilizedThis.sort((a, b) => {
@@ -34,22 +27,118 @@ const stableSort = (array, comparator) => {
 
 const headCells = [
   {
-    id: "ticker",
+    id: "date",
     numeric: false,
     disablePadding: true,
-    label: "코인",
+    label: "날짜",
   },
   {
-    id: "upbitPrice",
+    id: "wingRatio1p",
     numeric: true,
-    disablePadding: false,
-    label: "업비트 시세(KRW)",
+    disablePadding: true,
+    label: "1p 윙 상품 비율",
   },
   {
-    id: "binancePrice",
+    id: "wingCount1p",
     numeric: true,
     disablePadding: false,
-    label: "바이낸스 시세(USDT)",
+    label: "1p 윙 상품 수",
+  },
+  {
+    id: "rocketCount1p",
+    numeric: true,
+    disablePadding: false,
+    label: "1p 로켓 상품 수",
+  },
+  {
+    id: "growthCount1p",
+    numeric: true,
+    disablePadding: true,
+    label: "1p 그로스 상품 수",
+  },
+  {
+    id: "adsRatio",
+    numeric: true,
+    disablePadding: false,
+    label: "광고 비율",
+  },
+  {
+    id: "adsCount",
+    numeric: true,
+    disablePadding: false,
+    label: "광고 상품 수",
+  },
+  {
+    id: "adsPositionCount",
+    numeric: true,
+    disablePadding: true,
+    label: "광고 구좌 수",
+  },
+  {
+    id: "rocketRatio",
+    numeric: true,
+    disablePadding: false,
+    label: "로켓 비율",
+  },
+  {
+    id: "rocketCount",
+    numeric: true,
+    disablePadding: false,
+    label: "로켓 상품 수",
+  },
+  {
+    id: "totalCount",
+    numeric: true,
+    disablePadding: true,
+    label: "전체 상품 수",
+  },
+  {
+    id: "averageReviewCount1p",
+    numeric: true,
+    disablePadding: false,
+    label: "1p 평균 리뷰 수",
+  },
+  {
+    id: "maxReviewCount1p",
+    numeric: true,
+    disablePadding: false,
+    label: "1p 최대 리뷰 수",
+  },
+  {
+    id: "midReviewCount1p",
+    numeric: true,
+    disablePadding: true,
+    label: "1p 중간 리뷰 수",
+  },
+  {
+    id: "minReviewCount1p",
+    numeric: true,
+    disablePadding: false,
+    label: "1p 최소 리뷰 수",
+  },
+  {
+    id: "averagePrice1p",
+    numeric: true,
+    disablePadding: false,
+    label: "1p 평균 판매가",
+  },
+  {
+    id: "maxPrice1p",
+    numeric: true,
+    disablePadding: true,
+    label: "1p 최고 판매가",
+  },
+  {
+    id: "midPrice1p",
+    numeric: true,
+    disablePadding: false,
+    label: "1p 중간 판매가",
+  },
+  {
+    id: "minPrice1p",
+    numeric: true,
+    disablePadding: false,
+    label: "1p 최저 판매가",
   },
 ];
 
@@ -60,7 +149,14 @@ const EnhancedTableHead = (props) => {
   };
 
   return (
-    <TableHead>
+    <TableHead
+      sx={{
+        ".MuiTableCell-root": {
+          width: "100%",
+          whiteSpace: "nowrap",
+        },
+      }}
+    >
       <TableRow>
         <TableCell />
         {headCells.map((headCell) => (
@@ -90,14 +186,13 @@ const EnhancedTableHead = (props) => {
   );
 };
 
-const GimpTable = () => {
-  const [order, setOrder] = useState("desc");
-  const [orderBy, setOrderBy] = useState("upbitPrice");
+const KeyWordTable = () => {
+  const [order, setOrder] = useState("asc");
+  const [orderBy, setOrderBy] = useState("date");
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
-  const [dense, setDense] = useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(5);
-  const [rows, setRows] = useRecoilState(tickerPriceState);
+  const [rows, setRows] = useRecoilState(keyWordState);
 
   useLayoutEffect(() => {
     fetchTickerPrice();
@@ -129,26 +224,6 @@ const GimpTable = () => {
     setOrderBy(property);
   };
 
-  const handleClick = (event, ticker) => {
-    const selectedIndex = selected.indexOf(ticker);
-    let newSelected = [];
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, ticker);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1)
-      );
-    }
-
-    setSelected(newSelected);
-  };
-
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -156,10 +231,6 @@ const GimpTable = () => {
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
-  };
-
-  const handleChangeDense = (event) => {
-    setDense(event.target.checked);
   };
 
   // Avoid a layout jump when reaching the last page with empty rows.
@@ -176,37 +247,37 @@ const GimpTable = () => {
   );
 
   const fetchTickerPrice = () => {
-    fetch("https://api.aqua-quant.com/fetchPrice", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        let tickerPriceList = data.quote;
-        let updatedRows = [...rows];
-        for (let tickerPrice in tickerPriceList) {
-          console.log(tickerPrice);
-          const indexToUpdate = updatedRows.findIndex(
-            (row) => row.ticker === tickerPrice
-          );
-          if (indexToUpdate !== -1) {
-            updatedRows[indexToUpdate] = {
-              ...updatedRows[indexToUpdate],
-              upbitPrice: tickerPriceList[tickerPrice].KRW,
-              binancePrice: tickerPriceList[tickerPrice].USDT,
-            };
-          } else {
-            updatedRows.push({
-              ticker: tickerPrice,
-              upbitPrice: tickerPriceList[tickerPrice].KRW,
-              binancePrice: tickerPriceList[tickerPrice].USDT,
-            });
-          }
-        }
-        setRows(updatedRows);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // fetch("https://api.aqua-quant.com/fetchPrice", {
+    //   method: "GET",
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     let tickerPriceList = data.quote;
+    //     let updatedRows = [...rows];
+    //     for (let tickerPrice in tickerPriceList) {
+    //       console.log(tickerPrice);
+    //       const indexToUpdate = updatedRows.findIndex(
+    //         (row) => row.ticker === tickerPrice
+    //       );
+    //       if (indexToUpdate !== -1) {
+    //         updatedRows[indexToUpdate] = {
+    //           ...updatedRows[indexToUpdate],
+    //           upbitPrice: tickerPriceList[tickerPrice].KRW,
+    //           binancePrice: tickerPriceList[tickerPrice].USDT,
+    //         };
+    //       } else {
+    //         updatedRows.push({
+    //           ticker: tickerPrice,
+    //           upbitPrice: tickerPriceList[tickerPrice].KRW,
+    //           binancePrice: tickerPriceList[tickerPrice].USDT,
+    //         });
+    //       }
+    //     }
+    //     setRows(updatedRows);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
 
   return (
@@ -216,7 +287,7 @@ const GimpTable = () => {
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
-            size={dense ? "small" : "medium"}
+            size="small"
           >
             <EnhancedTableHead
               numSelected={selected.length}
@@ -232,11 +303,10 @@ const GimpTable = () => {
                 return (
                   <TableRow
                     hover
-                    onClick={(event) => handleClick(event, row.ticker)}
                     role="checkbox"
                     tabIndex={-1}
-                    key={row.ticker}
-                    sx={{ cursor: "pointer" }}
+                    key={row.date}
+                    sx={{ whiteSpace: "nowrap" }}
                   >
                     <TableCell />
                     <TableCell
@@ -245,10 +315,28 @@ const GimpTable = () => {
                       scope="row"
                       padding="none"
                     >
-                      {row.ticker}
+                      {row.date}
                     </TableCell>
-                    <TableCell align="right">{row.upbitPrice}</TableCell>
-                    <TableCell align="right">{row.binancePrice}</TableCell>
+                    <TableCell align="right">{row.wingRatio1p}</TableCell>
+                    <TableCell align="right">{row.wingCount1p}</TableCell>
+                    <TableCell align="right">{row.rocketCount1p}</TableCell>
+                    <TableCell align="right">{row.growthCount1p}</TableCell>
+                    <TableCell align="right">{row.adsRatio}</TableCell>
+                    <TableCell align="right">{row.adsCount}</TableCell>
+                    <TableCell align="right">{row.adsPositionCount}</TableCell>
+                    <TableCell align="right">{row.rocketRatio}</TableCell>
+                    <TableCell align="right">{row.rocketCount}</TableCell>
+                    <TableCell align="right">{row.totalCount}</TableCell>
+                    <TableCell align="right">
+                      {row.averageReviewCount1p}
+                    </TableCell>
+                    <TableCell align="right">{row.maxReviewCount1p}</TableCell>
+                    <TableCell align="right">{row.midReviewCount1p}</TableCell>
+                    <TableCell align="right">{row.minReviewCount1p}</TableCell>
+                    <TableCell align="right">{row.averagePrice1p}</TableCell>
+                    <TableCell align="right">{row.maxPrice1p}</TableCell>
+                    <TableCell align="right">{row.midPrice1p}</TableCell>
+                    <TableCell align="right">{row.minPrice1p}</TableCell>
                     <TableCell />
                   </TableRow>
                 );
@@ -256,7 +344,7 @@ const GimpTable = () => {
               {emptyRows > 0 && (
                 <TableRow
                   style={{
-                    height: (dense ? 33 : 53) * emptyRows,
+                    height: 33 * emptyRows,
                   }}
                 >
                   <TableCell colSpan={6} />
@@ -266,7 +354,7 @@ const GimpTable = () => {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
+          rowsPerPageOptions={[5, 10, 15]}
           component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
@@ -275,15 +363,8 @@ const GimpTable = () => {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="여백좁히기"
-      />
-      <Button onClick={fetchTickerPrice} disableRipple>
-        실시간 코인 시세 불러오기
-      </Button>
     </Box>
   );
 };
 
-export default GimpTable;
+export default KeyWordTable;

@@ -20,13 +20,17 @@ const Overview = () => {
             <FormattedMessage id="Overview" />
           </Typography>
         </Grid>
-        <Profit />
+        <Grid item xs={12} lg={6.3} sx={{ paddingTop: "0px !important" }}>
+          <Profit />
+        </Grid>
         <Divider
           orientation="vertical"
           flexItem
           sx={{ paddingLeft: "10px", paddingRight: "10px" }}
         />
-        <Asset />
+        <Grid item xs={12} lg={5.4} sx={{ paddingTop: "0px !important" }}>
+          <Asset />
+        </Grid>
       </Grid>
     </MainCard>
   );

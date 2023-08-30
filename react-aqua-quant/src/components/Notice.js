@@ -18,9 +18,13 @@ const createData = (title, author, createdDate) => {
 };
 
 const rows = [
-  createData("RSI 1h", "Inclease lab", "2023-07-17"),
-  createData("Bollinger Band 2h", "Inclease lab", "2023-07-16"),
-  createData("RSI 15m", "Inclease lab", "2023-07-16"),
+  createData(
+    "[시스템 점검 안내] 07/18 오전 5시...",
+    "Inclease lab",
+    "2023-07-17"
+  ),
+  createData("[필독] 최초 로그인 후 해야할 것.", "Inclease lab", "2023-07-16"),
+  createData("반갑습니다. 저희는 인클리즈랩...", "Inclease lab", "2023-07-16"),
 ];
 
 const Notice = () => {

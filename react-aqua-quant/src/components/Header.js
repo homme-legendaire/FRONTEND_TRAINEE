@@ -10,8 +10,7 @@ import {
 import theme from "../themes";
 
 // assets
-import { Menu2, ChevronLeft, ChevronRight } from "tabler-icons-react";
-import LogoSection from "./Logo";
+import { Menu2 } from "tabler-icons-react";
 import MessageCenter from "./MessageCenter";
 import { useRecoilValue } from "recoil";
 import { customizationState } from "../atom";
@@ -32,11 +31,8 @@ const Header = ({ handleLeftDrawerToggle }) => {
           transform: "translateX(0)",
           transition: "all .2s ease",
         }}
-      ></Box>
-      <ButtonBase
-        disableRipple
-        sx={{ borderRadius: "12px", overflow: "hidden" }}
-      >
+      />
+      <ButtonBase disableRipple sx={{ borderRadius: "12px" }}>
         <Avatar
           variant="rounded"
           sx={{

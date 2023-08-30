@@ -46,10 +46,6 @@ const NavItem = ({ item, level }) => {
     listItemProps = { component: "a", href: item.url, target: itemTarget };
   }
 
-  const itemHandler = (id) => {
-    console.log("ID", id);
-  };
-
   // active menu item on page load
   useEffect(() => {
     const currentIndex = document.location.pathname
@@ -76,7 +72,6 @@ const NavItem = ({ item, level }) => {
         fontWeight: 600,
       }}
       selected={customization.isOpen.findIndex((id) => id === item.id) > -1}
-      onClick={() => itemHandler(item.id)}
     >
       <ListItemIcon sx={{ my: "auto", minWidth: !item?.icon ? 18 : 36 }}>
         {itemIcon}

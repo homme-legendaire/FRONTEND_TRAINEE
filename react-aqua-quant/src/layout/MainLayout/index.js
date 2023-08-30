@@ -6,7 +6,9 @@ import {
   AppBar,
   Box,
   CssBaseline,
+  Modal,
   Toolbar,
+  Typography,
   useMediaQuery,
 } from "@mui/material";
 
@@ -74,6 +76,33 @@ const MainLayout = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
+      <Modal
+        open={customization.logoutModalOpened}
+        onClose={() =>
+          setCustomization({ ...customization, logoutModalOpened: false })
+        }
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 400,
+            bgcolor: "background.paper",
+            border: "2px solid #000",
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </Typography>
+        </Box>
+      </Modal>
       <CssBaseline />
       {/* header */}
       <AppBar

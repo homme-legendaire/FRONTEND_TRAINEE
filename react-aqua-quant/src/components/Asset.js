@@ -39,137 +39,136 @@ const Asset = () => {
   ];
 
   return (
-    <Grid item xs={12} lg={5.4}>
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="space-between"
-        sx={{ paddingLeft: "10px", paddingRight: "10px" }}
-        ref={assetRef}
-      >
-        <Grid container alignItems="flex-end">
-          <Grid item>
-            <Typography variant="subTitle1">
-              {usdtAsset.toLocaleString()} USDT
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Grid item>
-              <Typography
-                sx={{
-                  ...theme.typography.body1,
-                  marginLeft: "1rem",
-                  marginBottom: "0.3rem",
-                  color: theme.palette.custom.wellDone,
-                }}
-              >
-                {krwAsset.toLocaleString()} KRW
-              </Typography>
-            </Grid>
-          </Grid>
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="space-between"
+      sx={{ paddingLeft: "10px", paddingRight: "10px" }}
+      ref={assetRef}
+    >
+      <Grid container alignItems="flex-end">
+        <Grid item>
+          <Typography variant="subTitle1">
+            {usdtAsset.toLocaleString()} USDT
+          </Typography>
         </Grid>
-        <Grid
-          container
-          alignItems="center"
-          color="#4073F2"
-          sx={{ lineHeight: 1, padding: "3px" }}
-        >
-          <IconButton color="inherit" size="small" disableRipple>
-            <Reload size="1rem" />
-          </IconButton>
+        <Grid item>
           <Grid item>
             <Typography
               sx={{
                 ...theme.typography.body1,
-                color: theme.palette.custom.main,
+                marginLeft: "1rem",
+                marginBottom: "0.3rem",
+                color: theme.palette.custom.wellDone,
               }}
             >
-              <FormattedMessage id="Update asset data" />
+              {krwAsset.toLocaleString()} KRW
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={7}>
-          <AssetPieChart data={chartData} colors={chartColor} />
-        </Grid>
-        <Grid item xs={12} sm={5}>
-          <List
+      </Grid>
+      <Grid
+        container
+        alignItems="center"
+        color="#4073F2"
+        sx={{ lineHeight: 1, padding: "3px" }}
+      >
+        <IconButton color="inherit" size="small" disableRipple>
+          <Reload size="1rem" />
+        </IconButton>
+        <Grid item>
+          <Typography
             sx={{
               ...theme.typography.body1,
+              color: theme.palette.custom.main,
             }}
+            my={1}
           >
-            {chartData.map((value, index) => (
-              <ListItem
-                key={index}
-                sx={{
-                  display: "grid",
-                  gridTemplateColumns: "0.1fr repeat(4, 1fr)",
-                  p: 0,
-                }}
-              >
-                <svg width="12" height="12">
-                  <rect
-                    width="12"
-                    height="12"
-                    fill={chartColor[index % chartColor.length]}
-                  />
-                </svg>
-                <ListItemText
-                  sx={{ textAlign: "center", color: "#585858" }}
-                  primary={value.name}
-                />
-                <ListItemText
-                  sx={{
-                    textAlign: "right",
-                    color: theme.palette.custom.wellDone,
-                  }}
-                  primary={value.amount.toFixed(2)}
-                />
-                <ListItemText
-                  sx={{
-                    textAlign: "right",
-                    color: theme.palette.custom.wellDone,
-                  }}
-                  primary={value.value.toFixed(2)}
-                />
-                <ListItemText
-                  sx={{
-                    textAlign: "right",
-                    color: theme.palette.custom.wellDone,
-                  }}
-                  primary={((value.value / usdtAsset) * 100).toFixed(2) + "%"}
-                />
-              </ListItem>
-            ))}
-          </List>
+            <FormattedMessage id="Update asset data" />
+          </Typography>
         </Grid>
-        <Grid
-          item
-          xs={12}
+      </Grid>
+      <Grid item xs={12} xl={7}>
+        <AssetPieChart data={chartData} colors={chartColor} />
+      </Grid>
+      <Grid item xs={12} xl={5}>
+        <List
           sx={{
-            display: "flex",
-            justifyContent: "flex-end",
+            ...theme.typography.body1,
           }}
         >
-          <Typography
-            sx={{
-              fontSize: "0.75rem",
-              fontWeight: 400,
-              color: theme.palette.custom.wellDone,
-            }}
-          >
-            <FormattedMessage id="Last update" />
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "0.75rem",
-              fontWeight: 400,
-              color: theme.palette.custom.wellDone,
-              marginLeft: "0.8rem",
-            }}
-          >
-            {lastUpdateDate}
-          </Typography>
-        </Grid>
+          {chartData.map((value, index) => (
+            <ListItem
+              key={index}
+              sx={{
+                display: "grid",
+                gridTemplateColumns: "0.1fr repeat(4, 1fr)",
+                p: 0,
+              }}
+            >
+              <svg width="12" height="12">
+                <rect
+                  width="12"
+                  height="12"
+                  fill={chartColor[index % chartColor.length]}
+                />
+              </svg>
+              <ListItemText
+                sx={{ textAlign: "center", color: "#585858" }}
+                primary={value.name}
+              />
+              <ListItemText
+                sx={{
+                  textAlign: "right",
+                  color: theme.palette.custom.wellDone,
+                }}
+                primary={value.amount.toFixed(2)}
+              />
+              <ListItemText
+                sx={{
+                  textAlign: "right",
+                  color: theme.palette.custom.wellDone,
+                }}
+                primary={value.value.toFixed(2)}
+              />
+              <ListItemText
+                sx={{
+                  textAlign: "right",
+                  color: theme.palette.custom.wellDone,
+                }}
+                primary={((value.value / usdtAsset) * 100).toFixed(2) + "%"}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: "0.75rem",
+            fontWeight: 400,
+            color: theme.palette.custom.wellDone,
+          }}
+        >
+          <FormattedMessage id="Last update" />
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: "0.75rem",
+            fontWeight: 400,
+            color: theme.palette.custom.wellDone,
+            marginLeft: "0.8rem",
+          }}
+        >
+          {lastUpdateDate}
+        </Typography>
       </Grid>
     </Grid>
   );

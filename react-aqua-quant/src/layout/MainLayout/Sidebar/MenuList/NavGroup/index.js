@@ -26,9 +26,8 @@ const NavGroup = ({ item }) => {
   return (
     <>
       <List>{items}</List>
-
       {/* group divider */}
-      <Divider sx={{ mt: 0.25, mb: 1.25 }} />
+      <Divider variant="middle" sx={{ mt: 0.25, mb: 1.25 }} />
     </>
   );
 };

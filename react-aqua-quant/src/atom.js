@@ -8,5 +8,6 @@ export const customizationState = atom({
     fontFamily: "Roboto",
     borderRadius: 8,
     opened: true,
+    logoutModalOpened: false,
   },
 });

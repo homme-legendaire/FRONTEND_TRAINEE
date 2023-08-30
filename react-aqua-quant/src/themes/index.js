@@ -1,15 +1,16 @@
 import { createTheme } from "@mui/material/styles";
-import componentStyleOverrides from "./compStyleOverride";
 
 const themePalette = {
   custom: {
     heavy: "#323232",
-    medium: "#a4a4a4",
     wellDone: "#767676",
+    medium: "#a4a4a4",
     main: "#4073f2",
     regularLight: "#f0f0f0",
+    lightBlue: "#f4f7ff",
     red: "#ff5252",
     light: "#f9f9f9",
+    semiLight: "#CBCBCB",
   },
   error: {
     main: "#ff5252",

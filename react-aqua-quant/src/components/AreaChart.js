@@ -16,7 +16,6 @@ const Chart = ({ data, xTicks, yTicks }) => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       const dataPoint = payload[0].payload;
-
       return (
         <div
           style={{
@@ -37,6 +36,7 @@ const Chart = ({ data, xTicks, yTicks }) => {
                       ? theme.palette.custom.main
                       : theme.palette.custom.red,
                   marginLeft: "15px",
+                  marginRight: "5px",
                 }}
               >
                 {dataPoint.profit > 0 ? "+" : "-"}
@@ -55,6 +55,7 @@ const Chart = ({ data, xTicks, yTicks }) => {
                       ? theme.palette.custom.main
                       : theme.palette.custom.red,
                   marginLeft: "15px",
+                  marginRight: "5px",
                 }}
               >
                 {totalProfit > 0 ? "+" : "-"}
