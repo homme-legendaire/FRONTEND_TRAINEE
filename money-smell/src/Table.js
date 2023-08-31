@@ -317,26 +317,38 @@ const KeyWordTable = () => {
                     >
                       {row.date}
                     </TableCell>
-                    <TableCell align="right">{row.wingRatio1p}</TableCell>
-                    <TableCell align="right">{row.wingCount1p}</TableCell>
-                    <TableCell align="right">{row.rocketCount1p}</TableCell>
-                    <TableCell align="right">{row.growthCount1p}</TableCell>
-                    <TableCell align="right">{row.adsRatio}</TableCell>
-                    <TableCell align="right">{row.adsCount}</TableCell>
-                    <TableCell align="right">{row.adsPositionCount}</TableCell>
-                    <TableCell align="right">{row.rocketRatio}</TableCell>
-                    <TableCell align="right">{row.rocketCount}</TableCell>
-                    <TableCell align="right">{row.totalCount}</TableCell>
                     <TableCell align="right">
-                      {row.averageReviewCount1p}
+                      {row["1p 윙 상품 비율"]}
                     </TableCell>
-                    <TableCell align="right">{row.maxReviewCount1p}</TableCell>
-                    <TableCell align="right">{row.midReviewCount1p}</TableCell>
-                    <TableCell align="right">{row.minReviewCount1p}</TableCell>
-                    <TableCell align="right">{row.averagePrice1p}</TableCell>
-                    <TableCell align="right">{row.maxPrice1p}</TableCell>
-                    <TableCell align="right">{row.midPrice1p}</TableCell>
-                    <TableCell align="right">{row.minPrice1p}</TableCell>
+                    <TableCell align="right">{row["1p 윙 상품 수"]}</TableCell>
+                    <TableCell align="right">
+                      {row["1p 로켓 상품 수"]}
+                    </TableCell>
+                    <TableCell align="right">
+                      {row["1p 그로스 상품 수"]}
+                    </TableCell>
+                    <TableCell align="right">{row["광고 비율"]}</TableCell>
+                    <TableCell align="right">{row["광고 상품 수"]}</TableCell>
+                    <TableCell align="right">{row["광고 구좌 수"]}</TableCell>
+                    <TableCell align="right">{row["로켓 비율"]}</TableCell>
+                    <TableCell align="right">{row["로켓 상품 수"]}</TableCell>
+                    <TableCell align="right">{row["전체 상품 수"]}</TableCell>
+                    <TableCell align="right">
+                      {row["1p 평균 리뷰 수"]}
+                    </TableCell>
+                    <TableCell align="right">
+                      {row["1p 최대 리뷰 수"]}
+                    </TableCell>
+                    <TableCell align="right">
+                      {row["1p 중간 리뷰 수"]}
+                    </TableCell>
+                    <TableCell align="right">
+                      {row["1p 최소 리뷰 수"]}
+                    </TableCell>
+                    <TableCell align="right">{row["1p 평균 판매가"]}</TableCell>
+                    <TableCell align="right">{row["1p 최고 판매가"]}</TableCell>
+                    <TableCell align="right">{row["1p 중간 판매가"]}</TableCell>
+                    <TableCell align="right">{row["1p 최소 판매가"]}</TableCell>
                     <TableCell />
                   </TableRow>
                 );
