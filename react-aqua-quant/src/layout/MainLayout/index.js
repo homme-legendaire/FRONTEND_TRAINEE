@@ -10,7 +10,11 @@ import {
   Toolbar,
   Typography,
   useMediaQuery,
+  Grid,
+  Button,
 } from "@mui/material";
+
+import { FormattedMessage } from "react-intl";
 
 import theme from "../../themes";
 
@@ -25,7 +29,7 @@ import Sidebar from "../../components/Sidebar";
 import navigation from "../../menu-items";
 
 // assets
-import { ChevronRight } from "tabler-icons-react";
+import { ChevronRight, Logout } from "tabler-icons-react";
 
 // styles
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -90,17 +94,70 @@ const MainLayout = () => {
             transform: "translate(-50%, -50%)",
             width: 400,
             bgcolor: "background.paper",
-            border: "2px solid #000",
             boxShadow: 24,
             p: 4,
+            textAlign: "center",
+            borderRadius: "8px",
           }}
         >
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+          <Logout size="4rem" color={theme.palette.custom.red} />
+          <Typography
+            my={2}
+            sx={{
+              ...theme.typography.body1,
+              fontSize: "1rem",
+              color: "#585858",
+            }}
+          >
+            <FormattedMessage id="Do you want to log out?" />
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <Grid
+            sx={{
+              display: "flex",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <Button
+              disableRipple
+              sx={{
+                borderRadius: "8px",
+                backgroundColor: "inherit",
+                fontSize: "1rem",
+                fontWeight: 600,
+                color: theme.palette.custom.medium,
+                py: "12px",
+                px: "45px",
+                "&:hover": {
+                  color: "#FFF",
+                  background: theme.palette.custom.red,
+                },
+              }}
+              onClick={() =>
+                setCustomization({ ...customization, logoutModalOpened: false })
+              }
+            >
+              <FormattedMessage id="Cancel" />
+            </Button>
+            <Button
+              disableRipple
+              sx={{
+                borderRadius: "8px",
+                backgroundColor: "inherit",
+                fontSize: "1rem",
+                fontWeight: 600,
+                color: theme.palette.custom.medium,
+                py: "12px",
+                px: "45px",
+                textTransform: "none",
+                "&:hover": {
+                  color: "#FFF",
+                  background: theme.palette.custom.red,
+                },
+              }}
+            >
+              <FormattedMessage id="Log out" />
+            </Button>
+          </Grid>
         </Box>
       </Modal>
       <CssBaseline />

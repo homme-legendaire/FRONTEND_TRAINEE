@@ -18,7 +18,7 @@ const Chart = ({ select }) => {
       <LineChart data={chartData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
-        <YAxis />
+        <YAxis domain={["dataMin - 5", "dataMax + 5"]} />
         <Tooltip />
         <Legend />
         <defs>

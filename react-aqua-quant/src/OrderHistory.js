@@ -1,5 +1,3 @@
-import styles from "./OrderHistory.module.css";
-
 const OrderHistory = () => {
   return (
     <div>

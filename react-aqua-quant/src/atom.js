@@ -11,3 +11,11 @@ export const customizationState = atom({
     logoutModalOpened: false,
   },
 });
+
+export const noticeModalState = atom({
+  key: "noticeModalState",
+  default: {
+    opened: false,
+    id: 0,
+  },
+});
